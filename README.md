@@ -2,6 +2,30 @@
 
 A practical guide for DevOps engineers getting started with AI-assisted infrastructure work. This playbook is based on real experience migrating the HSE (Health Service Executive) Ireland web platform from Azure Front Door to Cloudflare using BMAD and GitHub Copilot agents to plan and implement the work.
 
+---
+
+## When to use this playbook
+
+**This playbook is for projects that already exist.** BMAD works best when you have a real codebase, real infrastructure, and a defined problem — something you can scan, verify, and build a PRD against. The HSE Cloudflare migration is a good example: existing Terraform repo, live Azure infrastructure we could query, a clear Phase 2 goal.
+
+**For discovery or greenfield projects — use FORGE instead.**
+
+If you are exploring a new idea, scoping something that doesn't exist yet, or trying to work out whether a problem is worth solving at all, BMAD is the wrong tool. FORGE (a separate agentic tool built for discovery and ideation) is better suited to that phase. It pressure-tests ideas through persona-driven interrogation before you commit to building anything.
+
+> A dedicated playbook for FORGE is planned: **[uki-forge-discovery-playbook](https://github.com/dept/uki-forge-discovery-playbook)** — not yet written, watch this space.
+
+The rough decision:
+
+| Situation | Tool |
+|---|---|
+| Existing infrastructure, defined migration or change | This playbook (BMAD) |
+| New feature on an existing codebase | This playbook (BMAD) |
+| Greenfield project, idea not yet validated | FORGE |
+| Discovery, scoping, "should we build this?" | FORGE |
+| Not sure | Start with FORGE, move to BMAD once the idea is hardened |
+
+---
+
 It is not a tutorial on AI in general. It is a working guide for engineers who use Terraform, Terragrunt, Cloudflare, and Azure and want to understand how to bring AI agents into that workflow properly — with the right guardrails, context, and human gates.
 
 ---
