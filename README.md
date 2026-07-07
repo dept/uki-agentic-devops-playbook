@@ -6,23 +6,25 @@ A practical guide for DevOps engineers getting started with AI-assisted infrastr
 
 ## When to use this playbook
 
-**This playbook is for projects that already exist.** BMAD works best when you have a real codebase, real infrastructure, and a defined problem — something you can scan, verify, and build a PRD against. The HSE Cloudflare migration is a good example: existing Terraform repo, live Azure infrastructure we could query, a clear Phase 2 goal.
+**This playbook is for infrastructure that already exists.** BMAD works best when you have a live codebase, running infrastructure you can query, and a defined problem to solve — a migration, a cutover, a new module, a security hardening exercise. The HSE Cloudflare migration is a good example: existing Terraform repo, live Azure infrastructure queryable via CLI, a clear Phase 2 objective.
 
-**For discovery or greenfield projects — use FORGE instead.**
+**For infrastructure that doesn't exist yet — use FORGE instead.**
 
-If you are exploring a new idea, scoping something that doesn't exist yet, or trying to work out whether a problem is worth solving at all, BMAD is the wrong tool. FORGE (a separate agentic tool built for discovery and ideation) is better suited to that phase. It pressure-tests ideas through persona-driven interrogation before you commit to building anything.
+If you are scoping a new platform, evaluating whether to build something, or exploring architecture options before any code or infrastructure exists, BMAD is the wrong starting point. FORGE is built for that phase — it pressure-tests the approach through structured interrogation before you commit to an architecture or start writing Terraform.
 
-> A dedicated playbook for FORGE is planned: **[uki-forge-discovery-playbook](https://github.com/dept/uki-forge-discovery-playbook)** — not yet written, watch this space.
+> A dedicated playbook for FORGE is planned: **[uki-forge-devops-playbook](https://github.com/dept/uki-forge-devops-playbook)** — not yet written, watch this space.
 
 The rough decision:
 
 | Situation | Tool |
 |---|---|
-| Existing infrastructure, defined migration or change | This playbook (BMAD) |
-| New feature on an existing codebase | This playbook (BMAD) |
-| Greenfield project, idea not yet validated | FORGE |
-| Discovery, scoping, "should we build this?" | FORGE |
-| Not sure | Start with FORGE, move to BMAD once the idea is hardened |
+| Existing infrastructure — migration, cutover, module changes | This playbook (BMAD) |
+| Security hardening, compliance changes on live infrastructure | This playbook (BMAD) |
+| New Terraform module for an existing platform | This playbook (BMAD) |
+| New platform — nothing exists yet, architecture not decided | FORGE |
+| Evaluating tools or approaches — "should we use Cloudflare Tunnels?" | FORGE |
+| Proof of concept, spike, feasibility investigation | FORGE |
+| Not sure | Start with FORGE, move to BMAD once the approach is decided |
 
 ---
 
