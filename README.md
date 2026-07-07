@@ -185,7 +185,21 @@ Next story
 
 ### The generate project context step matters
 
-Before any planning, run `bmad-generate-project-context`. This scans your existing repo and produces `_bmad-output/project-context.md` — a file the agent loads at runtime that tells it:
+Before any planning, run the `bmad-generate-project-context` skill. This is run **inside your AI agent tool** — OpenCode, Claude Code, or GitHub Copilot Chat — not from the terminal.
+
+Open your agent tool in the repo, then:
+
+```
+/bmad-generate-project-context
+```
+
+Or in a chat window:
+
+```
+Run bmad-generate-project-context
+```
+
+The skill scans your existing repo and produces `_bmad-output/project-context.md` — a file the agent loads at runtime that tells it:
 
 - Which modules exist and what they do
 - Naming conventions
@@ -622,16 +636,30 @@ Test this. A rollback PR that hasn't been planned before the cutover window is n
 
 ### BMAD commands
 
+All BMAD skills are run **inside your AI agent tool** (OpenCode, Claude Code, GitHub Copilot Chat) — not from the terminal. Either use the slash command if your tool supports it, or type the skill name in a chat message.
+
 ```
-bmad-generate-project-context   Generate project-context.md from existing repo
-bmad-prd                        Create/update/validate a PRD
-bmad-architecture               Create architecture spine
-bmad-create-epics-and-stories   Break requirements into epics and stories
-bmad-sprint-planning            Generate sprint-status.yaml
-bmad-create-story               Create implementation-ready story file
-bmad-dev-story                  Execute a story (agent implements it)
-bmad-code-review                Code review a PR
-bmad-help                       What to do next
+/bmad-generate-project-context   Generate project-context.md from existing repo
+/bmad-prd                        Create/update/validate a PRD
+/bmad-architecture               Create architecture spine
+/bmad-create-epics-and-stories   Break requirements into epics and stories
+/bmad-sprint-planning            Generate sprint-status.yaml
+/bmad-create-story               Create implementation-ready story file
+/bmad-dev-story                  Execute a story (agent implements it)
+/bmad-code-review                Code review a PR
+/bmad-help                       What to do next
+```
+
+For tools that don't support slash commands, just say:
+
+```
+Run bmad-prd
+```
+
+or
+
+```
+Invoke the bmad-architecture skill
 ```
 
 ### Azure Front Door CLI — useful commands
